@@ -24,7 +24,7 @@ class CreateMovieRequest extends FormRequest
         return [
             'title' =>'required|min:3|max:255|string',
             'genre' =>'required|min:10|max:500|string',
-            'year' =>'between:01/01/1900' . date('Y'),
+            'year' =>'after:01/01/1900|before:08/12/2023',
             'storyline' =>'max:1000|string'
         ];
     }

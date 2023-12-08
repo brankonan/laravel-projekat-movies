@@ -23,7 +23,7 @@ class MoviesController extends Controller
     public function store(CreateMovieRequest $request)
     {
         $data = Movie::create($request->all());
-        return redirect('/createmovie')->with('status', 'Movie added successfully!');
+        return redirect('/create')->with('status', 'Movie added successfully!');
     }
 
     /**

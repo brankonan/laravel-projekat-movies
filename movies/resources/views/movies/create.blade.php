@@ -24,5 +24,5 @@
             <button type="submit">Dodaj film</button>
         </form>
     </div>
-
+@include('components.errors')
 @endsection
