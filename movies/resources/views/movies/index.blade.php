@@ -1,3 +1,5 @@
+@extends('layout.default')
+
 <h1>Lista Svih filmova</h1>
 
 <ul>
