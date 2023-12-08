@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,10 @@ class MoviesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateMovieRequest $request)
     {
-        //
+        $data = Movie::create($request->all());
+        return redirect('/createmovie')->with('status', 'Movie added successfully!');
     }
 
     /**
@@ -29,9 +31,14 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $movie = Movie::find($id);
+        return view('movies.show', compact('movie'));
+
     }
 
+    public function create(){
+        return view('movies.create');
+    }
     /**
      * Update the specified resource in storage.
      */

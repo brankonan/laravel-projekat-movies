@@ -8,7 +8,7 @@
 
 <ul>
     @foreach($movies as $movie)
-        <li>{{ $movie->title }} - {{ $movie->storyline }}</li>
+        <li><a href="/movies/{{ $movie->id }}">{{ $movie->title }}</a> - {{ $movie->storyline }}</li>
     @endforeach
 
 </ul>
