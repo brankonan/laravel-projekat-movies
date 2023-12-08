@@ -1,5 +1,9 @@
 @extends('layout.default')
 
+
+@section('content')
+    
+
 <h1>Lista Svih filmova</h1>
 
 <ul>
@@ -8,3 +12,4 @@
     @endforeach
 
 </ul>
+@endsection
