@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateMovieRequest;
 use App\Models\Comment;
+use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class MoviesController extends Controller
     public function store(CreateMovieRequest $request)
     {
         $data = Movie::create($request->all());
-        return redirect('/create')->with('status', 'Movie added successfully!');
+        return redirect('/movies/')->with('status', 'Movie added successfully!');
     }
 
     /**
@@ -39,7 +40,8 @@ class MoviesController extends Controller
     }
 
     public function create(){
-        return view('movies.create');
+        $genres = Genre::all();
+        return view('movies.create', compact('genres'));
     }
     /**
      * Update the specified resource in storage.
