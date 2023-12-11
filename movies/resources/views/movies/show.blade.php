@@ -8,6 +8,7 @@
     <p><strong>Godina:</strong> {{ $movie->year }}</p>
     <p><strong>Zaplet:</strong> {{ $movie->storyline }}</p>
 
+    @include('components.createcomment')
     @include('components.comments')
 
 </div>

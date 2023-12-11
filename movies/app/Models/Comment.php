@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-    protected $fillable = ['movie_id', 'content'];
+    protected $fillable = [ 'content', 'movie_id',];
     public function movie(){
         return $this->belongsTo(Movie::class);
 }
