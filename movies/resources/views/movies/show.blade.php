@@ -7,5 +7,8 @@
     <p><strong>Režiser:</strong> {{ $movie->director }}</p>
     <p><strong>Godina:</strong> {{ $movie->year }}</p>
     <p><strong>Zaplet:</strong> {{ $movie->storyline }}</p>
+
+    @include('components.comments')
+
 </div>
 @endsection
