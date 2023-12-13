@@ -16,7 +16,8 @@ class MoviesController extends Controller
     public function index()
     {
         $movies = Movie::all();
-        return view('movies.index', compact('movies'));
+        $latestMovies = Movie::orderBy('created_at', 'desc')->take(5)->get();
+        return view('movies.index', compact('movies','latestMovies'));
     }
 
     /**
@@ -27,7 +28,6 @@ class MoviesController extends Controller
         $data = Movie::create($request->all());
         return redirect('/movies/')->with('status', 'Movie added successfully!');
     }
-
     /**
      * Display the specified resource.
      */

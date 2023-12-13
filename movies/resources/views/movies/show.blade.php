@@ -1,5 +1,5 @@
 @extends('layout.default')
-
+@extends('layout.default')
 @section('content')
 <div class="container mt-4">
     <h1>{{ $movie->title }}</h1>

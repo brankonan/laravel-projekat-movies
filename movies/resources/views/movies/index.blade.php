@@ -1,4 +1,5 @@
 @extends('layout.default')
+@extends('layout.sidebar')
 
 
 @section('content')
